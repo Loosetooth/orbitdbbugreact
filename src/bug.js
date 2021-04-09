@@ -4,14 +4,14 @@ const IpfsClient = require("ipfs-http-client")
 var ipfs
 var orbitdb
 
-async function init() {
+export async function init() {
     ipfs = IpfsClient({ host: 'localhost', port: '5001', protocol: 'http' })
     orbitdb = await OrbitDB.createInstance(ipfs)
 }
 
 // Creates a certain number of feed databases
 // and fills them up with three text values
-async function createManyDbs(number) {
+export async function createManyDbs(number) {
     await init()
 
     let dbs = []
@@ -21,7 +21,7 @@ async function createManyDbs(number) {
         dbs.push(db)
 
         for(let j = 0; j<3; j++) {
-            await db.add({text: "Tweet" + j})
+            await db.add({text: "Tweet" + j}, {pin: true})
         }
     }
 
@@ -31,24 +31,29 @@ async function createManyDbs(number) {
 }
 
 // Loads a number of feed dbs from their addresses
-async function openManyDbs(addresses) {
+export async function openManyDbs(addresses) {
     await init()
-
+  
     let data = []
     let dbs = []
-
-    for(let address of addresses) {
-        let db = await orbitdb.open(address)
-        await db.load()
-        dbs.push(db)
-
-        let elements = await db.iterator({ reverse: true, limit: -1}).collect()
-        let myData = elements.map((element) => element.payload.value.text)
-        data.push({name: db.dbname, data: myData})
+  
+    for (let address of addresses) {
+      console.log("Opening database...")
+      let db = await orbitdb.open(address)
+      await db.load({fetchEntryTimeout: 3000})
+      console.log("Loaded database.")
+      dbs.push(db)
+  
+      console.log("Getting elements...")
+      let elements = await db.iterator({ reverse: true, limit: -1 }).collect()
+      console.log("Got elements: ")
+      let myData = elements.map((element) => element.payload.value.text)
+      console.log(myData)
+      data.push({ name: db.dbname, data: myData })
     }
-
+  
     console.log(data)
-}
+  }
 
 const addresses = [
     '/orbitdb/zdpuAnrgVSgQu6FsgBMuM3HuvkCnatZCPZyDnd8tKNnTjTRV7/Test0',
