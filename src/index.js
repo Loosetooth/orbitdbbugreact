@@ -8,14 +8,14 @@ import {openManyDbs} from './bug'
 
 
 const addresses = [
-  '/orbitdb/zdpuAtxMYsxuT68bJKaRQpJq2y9bCkUghtebx6HaTfvamwLUJ/Test0',
-  '/orbitdb/zdpuAuA1Cc9PLWLgZnf8qj8MJSq6XSDsYxbB8jX4UcRv45Diz/Test1',
-  '/orbitdb/zdpuAo2UiSF4V9qJuDJBBahBbQP2LSFV2uFrEVkEXN3uwry3P/Test2',
-  '/orbitdb/zdpuB18Mry92AwT3AX29fujNEGMzH8oihd4soCsekGQwLa54A/Test3',
-  '/orbitdb/zdpuAyzQS9fTANJk6jXvSn6TWtJYdA9bUQu3UGq8fE1jwneXi/Test4',
-  '/orbitdb/zdpuB13YYTZzg2ov6pETS81AdryVFa8kLFkj7AduuZEDVqKQ2/Test5',
-  '/orbitdb/zdpuB3LTLjT8Lthx137YGVbyEgWQ1PR2gnsReWWimtegJYQw2/Test6',
-  '/orbitdb/zdpuAuMGC3ASZw8LRJuPMygNvT2DzCjP8wvPiJ7VgTv1kRxce/Test7'
+  '/orbitdb/zdpuArCsRGLKyFMM44xNDWHWT3r1KcwfBswsM6amWrNRf4M8q/Test0',
+  '/orbitdb/zdpuAtvrjRVGRL2zc6pHs5SviBxjHfjfuLpGdUFfJuzhAecVN/Test1',
+  '/orbitdb/zdpuAuh4XuhCiX9JoQWQysm7AAKDaLjXarkS9uPWZKWpS7pyX/Test2',
+  '/orbitdb/zdpuAp7LajjwbZUxQX3wHf8A8tBjUqu75T4xS7e3upLCK43rN/Test3',
+  '/orbitdb/zdpuAz4hY7HJb3M97N6Zfyr2PzwVF9qUiiB6yeEFYYmRBrJjT/Test4',
+  '/orbitdb/zdpuAtTts1YY5hPD9Gd7Tj3EkBJcoQtY5h5DiaTFKBzAHBkew/Test5',
+  '/orbitdb/zdpuAwXbznaah3nuCQePSfgsQNTTnkzUjYGBajDJw1dAYSjQk/Test6',
+  '/orbitdb/zdpuAvtfWPSrvEmQGA2X4xmMGXoNm2b6LCAavLgGMogqP1uUo/Test7'
 ]
 
 
